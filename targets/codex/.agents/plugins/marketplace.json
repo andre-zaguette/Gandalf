@@ -1,0 +1,20 @@
+{
+  "name": "gandalf-repo",
+  "interface": {
+    "displayName": "Gandalf Repo"
+  },
+  "plugins": [
+    {
+      "name": "gandalf",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gandalf"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

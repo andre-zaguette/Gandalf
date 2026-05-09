@@ -1,0 +1,8 @@
+{
+  "name": "gandalf",
+  "description": "Wise guide for Claude. Sharp questions, sparse language, strong engineering judgment.",
+  "author": {
+    "name": "Andre Zaguette",
+    "url": "https://github.com/andre-zaguette"
+  }
+}
