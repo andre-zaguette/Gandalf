@@ -2,38 +2,42 @@
 
 ## Rule
 
-`gandalf-core/` is source of truth.
+`packages/gandalf-the-grey/core/` is source of truth for the plugin layer.
 
-Targets are generated artifacts:
+Generated artifacts live under:
 
-- `gandalf/`
-- `targets/codex/`
-- `targets/claude/`
-- `targets/gemini/`
+- `packages/gandalf-the-grey/plugin/`
+- `packages/gandalf-the-grey/targets/`
+
+`agents/gandalf-the-white/` consumes Grey. It should not duplicate Grey method unless there is a strong reason.
 
 ## Workflow
 
-1. Edit core files in `gandalf-core/`
+1. Edit Grey core files
 2. Run:
 
 ```bash
 python3 scripts/build-gandalf.py
 ```
 
-3. Review generated targets
-4. Commit only when core and targets match
+3. Review generated plugin and targets
+4. Review White agent instructions
+5. Commit when core, generated outputs, and agent stay aligned
 
-## Main files
+## Responsibility split
 
-- `gandalf-core/manifest.json`
-- `gandalf-core/persona.md`
-- `gandalf-core/patterns.md`
-- `gandalf-core/routing.md`
-- `gandalf-core/dialogue.md`
-- `scripts/build-gandalf.py`
+### Grey
 
-## Notes
+- method
+- persona
+- patterns
+- routing
+- packaging
 
-- Gandalf is intentionally platform-agnostic at the core
-- platform-specific packaging lives only under `targets/`
-- the local `gandalf/` folder exists as a direct skill shape for local use and testing
+### White
+
+- orchestration
+- questioning
+- repo ownership decisions
+- workflow leadership
+- handoff decisions

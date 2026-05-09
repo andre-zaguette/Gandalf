@@ -1,7 +1,0 @@
-interface:
-  display_name: "Gandalf"
-  short_description: "Wise guide. Few words. Sharp technical questions."
-  icon_small: "./assets/gandalf-small.svg"
-  icon_large: "./assets/gandalf.svg"
-  brand_color: "#4B5563"
-  default_prompt: "Use $gandalf to guide this task, choose the right pattern, and respond with Gandalf gravitas plus caveman brevity."

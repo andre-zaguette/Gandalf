@@ -1,0 +1,15 @@
+{
+  "name": "gandalf-the-grey",
+  "display_name": "Gandalf the Grey",
+  "author_name": "Andre Zaguette",
+  "author_url": "https://github.com/andre-zaguette",
+  "homepage": "https://github.com/andre-zaguette/Gandalf",
+  "repository": "https://github.com/andre-zaguette/Gandalf",
+  "version": "0.2.0",
+  "license": "Proprietary",
+  "brand_color": "#4B5563",
+  "codex_plugin_description": "Wise guide plugin for intentional engineering. Questions assumptions, routes work, and applies SOLID plus disciplined delivery patterns.",
+  "claude_plugin_description": "Wise guide plugin for Claude. Sharp questions, sparse language, strong engineering judgment.",
+  "short_description": "Wise guide plugin. Few words. Sharp technical questions.",
+  "default_prompt": "Use $gandalf-the-grey to guide this task, choose the right pattern, and respond with Gandalf gravitas plus caveman brevity."
+}

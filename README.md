@@ -1,45 +1,43 @@
 # Gandalf
 
-Gandalf is a multi-target guide plugin and skill pack for intentional engineering work.
+Gandalf is split into two layers.
 
-It is designed to work across:
+- `gandalf-the-grey`: plugin and method package
+- `gandalf-the-white`: agent that consumes the Grey package
 
-- Codex
-- Claude
-- Gemini
+This lets teams choose:
 
-## Purpose
+- plugin only
+- full agent orchestration
 
-Gandalf acts as a guide before implementation:
+## Design
 
-- clarify quest
-- challenge weak assumptions
-- choose pattern
-- route to the right skill or workflow
-- keep language sparse and exact
+### Gandalf the Grey
 
-Voice: Gandalf from Tolkien, compressed with caveman discipline.
+Grey is source of method and behavior:
 
-## Method stack
+- persona
+- voice
+- patterns
+- routing
+- questioning policy
+- multi-target packaging for Codex, Claude, and Gemini
 
-- BDD
-- TDD
-- SOLID
-- ADR
-- Harness
-- Refactoring
-- Testing
-- Code Review
-- Caveman
+### Gandalf the White
+
+White is the agent layer:
+
+- classify task
+- choose path
+- ask sharp questions first
+- decide backend, frontend, or cross-repo ownership
+- consume Grey instead of redefining method
 
 ## Repository layout
 
-- `gandalf-core/`: source of truth
-- `gandalf/`: local active skill shape
-- `targets/codex/`: Codex plugin package
-- `targets/claude/`: Claude plugin package
-- `targets/gemini/`: Gemini skill package
-- `scripts/build-gandalf.py`: regenerate all targets from core
+- `packages/gandalf-the-grey/`
+- `agents/gandalf-the-white/`
+- `scripts/build-gandalf.py`
 
 ## Build
 
@@ -47,9 +45,4 @@ Voice: Gandalf from Tolkien, compressed with caveman discipline.
 python3 scripts/build-gandalf.py
 ```
 
-## Current design
-
-One core. Many targets.
-
-Do not edit generated target files first.
-Edit `gandalf-core/`, then rebuild.
+Edit Grey core first. Rebuild after.

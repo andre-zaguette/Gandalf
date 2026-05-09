@@ -1,0 +1,8 @@
+{
+  "name": "gandalf-the-grey",
+  "description": "Wise guide plugin for Claude. Sharp questions, sparse language, strong engineering judgment.",
+  "author": {
+    "name": "Andre Zaguette",
+    "url": "https://github.com/andre-zaguette"
+  }
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Gandalf the Grey"
+  short_description: "Wise guide plugin. Few words. Sharp technical questions."
+  icon_small: "./assets/gandalf-grey-small.svg"
+  icon_large: "./assets/gandalf-grey.svg"
+  brand_color: "#4B5563"
+  default_prompt: "Use $gandalf-the-grey to guide this task, choose the right pattern, and respond with Gandalf gravitas plus caveman brevity."

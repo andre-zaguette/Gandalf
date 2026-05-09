@@ -1,0 +1,20 @@
+{
+  "name": "gandalf-the-grey-repo",
+  "interface": {
+    "displayName": "Gandalf the Grey Repo"
+  },
+  "plugins": [
+    {
+      "name": "gandalf-the-grey",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gandalf-the-grey"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

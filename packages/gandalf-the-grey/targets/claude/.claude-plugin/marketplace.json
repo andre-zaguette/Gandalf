@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "gandalf-the-grey",
+  "description": "Wise guide plugin for Claude. Sharp questions, sparse language, strong engineering judgment.",
+  "owner": {
+    "name": "Andre Zaguette",
+    "url": "https://github.com/andre-zaguette"
+  },
+  "plugins": [
+    {
+      "name": "gandalf-the-grey",
+      "description": "Gandalf the Grey plugin. Wise, sparse, sharp engineering judgment.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

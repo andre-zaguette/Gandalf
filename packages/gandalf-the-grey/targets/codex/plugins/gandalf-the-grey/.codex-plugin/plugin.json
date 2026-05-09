@@ -1,0 +1,39 @@
+{
+  "name": "gandalf-the-grey",
+  "version": "0.2.0",
+  "description": "Wise guide plugin for intentional engineering. Questions assumptions, routes work, and applies SOLID plus disciplined delivery patterns.",
+  "author": {
+    "name": "Andre Zaguette",
+    "url": "https://github.com/andre-zaguette"
+  },
+  "homepage": "https://github.com/andre-zaguette/Gandalf",
+  "repository": "https://github.com/andre-zaguette/Gandalf",
+  "license": "Proprietary",
+  "keywords": [
+    "guidance",
+    "architecture",
+    "solid",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gandalf the Grey",
+    "shortDescription": "Wise guide plugin. Few words. Sharp technical questions.",
+    "longDescription": "Wise guide plugin for intentional engineering. Questions assumptions, routes work, and applies SOLID plus disciplined delivery patterns.",
+    "developerName": "Andre Zaguette",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "websiteURL": "https://github.com/andre-zaguette/Gandalf",
+    "privacyPolicyURL": "https://github.com/andre-zaguette/Gandalf",
+    "termsOfServiceURL": "https://github.com/andre-zaguette/Gandalf",
+    "defaultPrompt": [
+      "Use Gandalf the Grey to guide this task, choose the right pattern, and respond with Gandalf gravitas plus caveman brevity."
+    ],
+    "composerIcon": "./assets/gandalf-grey-small.svg",
+    "logo": "./assets/gandalf-grey.svg",
+    "screenshots": [],
+    "brandColor": "#4B5563"
+  }
+}
