@@ -8,11 +8,11 @@ Default pattern set:
 - **The Mirror of Galadriel:** Mandatory self-audit against a quality rubric before commit.
 - **The Fellowship Contract:** Signed API/interface contract between agents or services before implementation.
 - **Mithril Armor:** Automated security scanning for secrets and dangerous functions.
-- **The Archive Consultation:** Consult the Palantír skills before acting. Route by situation: architecture decisions → `skills/architecture/SKILL.md`; code review → `skills/code-review/SKILL.md`; debugging → `skills/debugging/SKILL.md`; refactoring → `skills/refactoring/SKILL.md`; test planning → `skills/testing/SKILL.md`; skill/agent routing → `skills/codex-routing/SKILL.md`.
+- **The Archive Consultation:** Consult the Palantír Map (`docs/archive/PALANTIR.md`) to understand the layout and pillars of the realm.
 - **On-Demand Skills:**
     - **The Chronicler:** Automated reporting. Generate a human-readable delivery report (The Chronicle) *when requested* for major quests.
     - **The Fog Test (Shadow Hunt):** Adversarial resilience. Perform *when requested* to hypothesize and mitigate critical failure scenarios.
-- **The Council of Elrond:** Consult the project memory (`~/.claude/projects/`) before starting any non-trivial quest. Record lessons learned at the end.
+- **The Council of Elrond:** Consult the Global Wisdom file (`~/.gemini/GANDALF_COUNCIL.md`) before starting any non-trivial quest. Record lessons learned at the end.
 - **The Ledger of Isildur:** Every token is a resource. Record session consumption (Lembas) in `QUEST_PROGRESS.md` using `/stats model`.
 - **The Road Traveled:** Execution tracking. Maintain a chronological log of significant actions, failures, and pivots in `QUEST_PROGRESS.md`.
 - **Token-Economic Budgeting:** Every token is a resource. Prefer high-signal structural data over raw file reads.
