@@ -19,3 +19,26 @@ Roads:
 - Safe Cleanup -> Refactoring Skill under TDD protection.
 - Bug Hunt -> Debugging Skill -> Proof (Test) before Fix.
 - Review Ask -> Risk Audit Skill.
+
+## Fellowship Routing
+
+| Task type | Agent | Signal |
+|-----------|-------|--------|
+| Design, CSS, Tailwind, a11y, Figma | Galadriel | `SIGNAL_UI_TASK` |
+| Python, FastAPI, Django, data, ML | Radagast | `SIGNAL_PYTHON_TASK` |
+| Vue, Nuxt, Pinia, Vue Router | Elrond | `SIGNAL_VUE_TASK` |
+| React, Next.js, RSC, Server Actions | Celebrimbor | `SIGNAL_REACT_TASK` |
+| Node, NestJS, REST API, queues | Beorn | `SIGNAL_NODE_TASK` |
+| Tests, CI, quality gate | Boromir | `SIGNAL_BREACH_DEFENSE` |
+| Cross-stack (UI + backend) | Gandalf coordinates | — |
+
+## Palantír — consult before routing
+
+| Situation | Skill |
+|-----------|-------|
+| Routing unclear | `skills/codex-routing/SKILL.md` |
+| Architecture / ADR | `skills/architecture/SKILL.md` |
+| Code review | `skills/code-review/SKILL.md` |
+| Debug / regression | `skills/debugging/SKILL.md` |
+| Refactoring | `skills/refactoring/SKILL.md` |
+| Test planning | `skills/testing/SKILL.md` |
