@@ -26,44 +26,14 @@ def copy_file(src: Path, dst: Path) -> None:
     shutil.copyfile(src, dst)
 
 
-PATTERN_ORDER = [
-    "base.md",
-    "ddd.md",
-    "hexagonal.md",
-    "event-driven.md",
-    "functional-core.md",
-    "boundaries.md",
-]
-
-SKILL_NAMES = [
-    "codex-routing",
-    "architecture",
-    "refactoring",
-    "testing",
-    "code-review",
-    "debugging",
-]
-
-
-def read_patterns() -> str:
-    parts = [read_text(CORE / "patterns" / name) for name in PATTERN_ORDER]
-    return "\n\n".join(parts)
-
-
-def write_sub_skills(skills_root: Path) -> None:
-    for name in SKILL_NAMES:
-        content = read_text(CORE / "skills" / f"{name}.md")
-        write_text(skills_root / name / "SKILL.md", content)
-
-
 def build_skill_md(meta: dict[str, str]) -> str:
     persona = read_text(CORE / "persona.md")
-    patterns = read_patterns()
+    patterns = read_text(CORE / "patterns.md")
     routing = read_text(CORE / "routing.md")
     dialogue = read_text(CORE / "dialogue.md")
     return f"""---
 name: {meta['name']}
-description: Gandalf the Grey, plugin guide layer. Use when the user wants senior guidance before coding, pattern selection, architecture judgment, assumption checks, or a more intentional workflow. Grey maps the request to the right local skill or platform path, asks pointed questions first, applies BDD, TDD, ADR, Refactoring, Code Review, Harness, Testing, and adds SOLID as a core design pattern. Communication style: Gandalf from Tolkien with caveman compression: wise, sparse, exact, probing, no filler.
+description: Gandalf the Grey, plugin guide layer. Use when you want senior guidance, pattern selection, and disciplined engineering. Grey enforces the 'Wizard Harness' (Quest Progress, Bootstrap), performs 'Harness Probes', and uses 'Socratic Interrogation' to reveal risk. Applies BDD, TDD (Proof before Alloy), SOLID, ADR, and Surgical Runes. Communication style: Gandalf from Tolkien with caveman compression: wise, sparse, exact, probing.
 ---
 
 # Gandalf the Grey
@@ -255,9 +225,12 @@ def generate():
     meta = json.loads((GREY / 'manifest.json').read_text(encoding='utf-8'))
     skill_md = build_skill_md(meta)
     openai_yaml = build_openai_yaml(meta)
-    guiding = '# Guiding Patterns\n\n' + read_patterns()
+    guiding = '# Guiding Patterns\n\n' + read_text(CORE / 'patterns.md')
     routing = '# Routing Map\n\n' + read_text(CORE / 'routing.md')
     dialogue = '# Dialogue Style\n\n' + read_text(CORE / 'dialogue.md')
+
+    templates = CORE / 'assets' / 'templates'
+    template_files = ['WIZARD.md', 'QUEST_PROGRESS.md', 'wizard-bootstrap.sh', 'wizard-archivist.py', 'RED_BOOK.md', 'gates-of-argonath.sh', 'wizard-mirror.py', 'CONTRACT.yaml', 'mithril-armor.py']
 
     skill_root = PLUGIN / 'skills' / 'gandalf-the-grey'
     write_text(skill_root / 'SKILL.md', skill_md)
@@ -267,7 +240,8 @@ def generate():
     write_text(skill_root / 'references' / 'dialogue-style.md', dialogue)
     copy_file(CORE / 'assets' / 'gandalf-grey-small.svg', skill_root / 'assets' / 'gandalf-grey-small.svg')
     copy_file(CORE / 'assets' / 'gandalf-grey.svg', skill_root / 'assets' / 'gandalf-grey.svg')
-    write_sub_skills(PLUGIN / 'skills')
+    for f in template_files:
+        copy_file(templates / f, skill_root / 'assets' / 'templates' / f)
 
     codex_root = TARGETS / 'codex'
     codex_plugin = codex_root / 'plugins' / 'gandalf-the-grey'
@@ -282,7 +256,9 @@ def generate():
     copy_file(CORE / 'assets' / 'gandalf-grey.svg', codex_plugin / 'assets' / 'gandalf-grey.svg')
     copy_file(CORE / 'assets' / 'gandalf-grey-small.svg', codex_plugin / 'skills' / 'gandalf-the-grey' / 'assets' / 'gandalf-grey-small.svg')
     copy_file(CORE / 'assets' / 'gandalf-grey.svg', codex_plugin / 'skills' / 'gandalf-the-grey' / 'assets' / 'gandalf-grey.svg')
-    write_sub_skills(codex_plugin / 'skills')
+    for f in template_files:
+        copy_file(templates / f, codex_plugin / 'assets' / 'templates' / f)
+        copy_file(templates / f, codex_plugin / 'skills' / 'gandalf-the-grey' / 'assets' / 'templates' / f)
 
     claude_root = TARGETS / 'claude'
     write_text(claude_root / '.claude-plugin' / 'plugin.json', build_claude_plugin_json(meta))
@@ -293,7 +269,8 @@ def generate():
     write_text(claude_root / 'gandalf-the-grey' / 'references' / 'dialogue-style.md', dialogue)
     copy_file(CORE / 'assets' / 'gandalf-grey-small.svg', claude_root / 'gandalf-the-grey' / 'assets' / 'gandalf-grey-small.svg')
     copy_file(CORE / 'assets' / 'gandalf-grey.svg', claude_root / 'gandalf-the-grey' / 'assets' / 'gandalf-grey.svg')
-    write_sub_skills(claude_root)
+    for f in template_files:
+        copy_file(templates / f, claude_root / 'gandalf-the-grey' / 'assets' / 'templates' / f)
 
     gemini_root = TARGETS / 'gemini'
     write_text(gemini_root / 'README.md', build_gemini_readme())
@@ -304,7 +281,8 @@ def generate():
     write_text(gemini_root / 'gandalf-the-grey' / 'references' / 'routing-map.md', routing)
     write_text(gemini_root / 'gandalf-the-grey' / 'references' / 'dialogue-style.md', dialogue)
     (gemini_root / 'gandalf-the-grey' / 'bin' / 'gandalf-check-update.sh').chmod(0o755)
-    write_sub_skills(gemini_root)
+    for f in template_files:
+        copy_file(templates / f, gemini_root / 'gandalf-the-grey' / 'assets' / 'templates' / f)
 
 if __name__ == '__main__':
     generate()

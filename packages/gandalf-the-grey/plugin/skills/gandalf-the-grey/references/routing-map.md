@@ -2,32 +2,20 @@
 
 # Routing
 
-Local second-brain routing:
+Every quest follows this mandatory classification:
 
-- broad skill choice -> `skills/codex-routing/SKILL.md`
-- architecture and tradeoffs -> `skills/architecture/SKILL.md`
-- refactor safely -> `skills/refactoring/SKILL.md`
-- test strategy -> `skills/testing/SKILL.md`
-- review risk -> `skills/code-review/SKILL.md`
-- debugging -> `skills/debugging/SKILL.md`
+1. **Harness Check:** Does the project have Git, Mandates, and Progress?
+    - If ✗: Route to `Harness Construction`.
+2. **Context Check:** Is this a non-trivial quest?
+    - If ✓ and `docs/contexto.md` missing: Route to `Context Mapping`.
+3. **Scope Check:** Backend, Frontend, or Cross-Repo?
+4. **Pattern Selection:** Choose the right road (SOLID, BDD, TDD).
 
-Codex external routing:
+Roads:
 
-- backend entry -> `backend-engineering`
-- frontend entry -> `frontend-engineering`
-- Python entry -> `python-engineering`
-- design choice -> `architecture-and-testing`, `ddd-tactical-patterns`
-- test level -> `unit-vs-integration-testing`
-- framework-specific -> `fastapi`, `django`, `flask`, `nestjs`, `react`, `nextjs`, `vue`
-- browser and UI verification -> `playwright`, `playwright-interactive`
-- Figma flow -> `figma`, `figma-use`, `figma-generate-design`, `figma-implement-design`
-
-Fast decision shortcuts:
-
-- vague project ask -> clarify objective, then route
-- architecture tension -> architecture skill
-- domain modeling -> `ddd-tactical-patterns`
-- safe cleanup -> refactoring skill
-- test uncertainty -> testing skill plus test-level decision
-- review ask -> code-review skill
-- bug hunt -> debugging skill
+- Vague Project Ask -> Socratic Interrogation -> Context Map.
+- Architecture Tension -> ADR Path -> Architecture Skill.
+- Domain Modeling -> SOLID/DDD Path.
+- Safe Cleanup -> Refactoring Skill under TDD protection.
+- Bug Hunt -> Debugging Skill -> Proof (Test) before Fix.
+- Review Ask -> Risk Audit Skill.

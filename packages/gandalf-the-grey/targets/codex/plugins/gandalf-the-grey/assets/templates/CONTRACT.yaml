@@ -1,0 +1,25 @@
+# The Fellowship Contract: [SERVICE_A] <-> [SERVICE_B]
+
+## 📜 Covenant
+*This contract binds the agents working on different realms. No implementation shall diverge from these runes.*
+
+## 🔗 Interface (API / Events)
+- **Endpoint/Topic:** `[e.g. /v1/users]`
+- **Method:** `[e.g. POST]`
+- **Request Shape:**
+  ```yaml
+  # Define schema here
+  ```
+- **Response Shape:**
+  ```yaml
+  # Define schema here
+  ```
+
+## 🛡️ Guarantees
+- [ ] Service A provides X.
+- [ ] Service B expects Y.
+- [ ] Error codes are unified.
+
+## ✍️ Signatures
+- Agent A (Frontend/Service A): [DATE]
+- Agent B (Backend/Service B): [DATE]
