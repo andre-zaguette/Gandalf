@@ -29,7 +29,7 @@ Goal: Inject Narvi-style discipline into Gandalf framework.
 
 ## Next Steps
 - [ ] Share the "Maiar-Level" Gandalf with the community.
-- [ ] Implement automated regression testing for the Archivist.
+- [x] Implement automated regression testing for the Archivist.
 
 ## Decisions
 - ADR-001: Use "Wizard" terminology (Quest, Risk, Harness, Probe) to maintain Tolkien theme while replacing Narvi/Altave jargon.

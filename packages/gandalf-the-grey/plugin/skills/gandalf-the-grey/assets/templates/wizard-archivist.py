@@ -1,8 +1,21 @@
 #!/usr/bin/env python3
 import os
+import sys
 import json
 import re
 from pathlib import Path
+
+_STDLIB_MODULES = getattr(sys, "stdlib_module_names", frozenset({
+    "abc", "ast", "asyncio", "builtins", "collections", "contextlib",
+    "copy", "dataclasses", "datetime", "decimal", "email", "enum",
+    "functools", "gc", "glob", "hashlib", "http", "importlib", "inspect",
+    "io", "itertools", "json", "logging", "math", "multiprocessing",
+    "operator", "os", "pathlib", "pickle", "platform", "pprint",
+    "queue", "re", "shutil", "signal", "socket", "sqlite3", "ssl",
+    "stat", "string", "subprocess", "sys", "tempfile", "threading",
+    "time", "traceback", "typing", "unittest", "urllib", "uuid",
+    "warnings", "weakref", "xml", "zipfile", "zlib",
+}))
 
 class WizardArchivist:
     def __init__(self, root_dir):
@@ -40,8 +53,12 @@ class WizardArchivist:
         full_path = self.root_dir / rel_path
         try:
             content = full_path.read_text(errors="ignore")
-            # Simple import detection
-            imports = re.findall(r'(?:import|from)\s+[\'"]?([@\w\.\-/]+)', content)
+            # Import detection: capture module name only (not the imported symbol)
+            raw = re.findall(
+                r'^from\s+([\w.\-/@]+)\s+import|^import\s+([\w.\-/@]+)',
+                content, re.M
+            )
+            imports = [a or b for a, b in raw if a or b]
             if imports:
                 self.map_data["dependencies"][str(rel_path)] = list(set(imports))
             
@@ -67,8 +84,11 @@ class WizardArchivist:
             for d in deps:
                 import_counts[d] = import_counts.get(d, 0) + 1
         
-        # Sort and take top 5
-        sorted_nodes = sorted(import_counts.items(), key=lambda x: x[1], reverse=True)
+        # Sort and take top 5, excluding stdlib modules
+        sorted_nodes = sorted(
+            [(k, v) for k, v in import_counts.items() if k not in _STDLIB_MODULES],
+            key=lambda x: x[1], reverse=True,
+        )
         self.map_data["god_nodes"] = [node[0] for node in sorted_nodes[:5]]
 
     def generate_reports(self):
