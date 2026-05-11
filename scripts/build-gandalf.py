@@ -230,7 +230,7 @@ def generate():
     dialogue = '# Dialogue Style\n\n' + read_text(CORE / 'dialogue.md')
 
     templates = CORE / 'assets' / 'templates'
-    template_files = ['WIZARD.md', 'QUEST_PROGRESS.md', 'wizard-bootstrap.sh', 'wizard-archivist.py', 'RED_BOOK.md', 'gates-of-argonath.sh', 'wizard-mirror.py', 'CONTRACT.yaml', 'mithril-armor.py']
+    template_files = ['WIZARD.md', 'QUEST_PROGRESS.md', 'wizard-bootstrap.sh', 'wizard-archivist.py', 'RED_BOOK.md', 'gates-of-argonath.sh', 'wizard-mirror.py', 'CONTRACT.yaml', 'mithril-armor.py', 'CHRONICLE.md']
 
     skill_root = PLUGIN / 'skills' / 'gandalf-the-grey'
     write_text(skill_root / 'SKILL.md', skill_md)

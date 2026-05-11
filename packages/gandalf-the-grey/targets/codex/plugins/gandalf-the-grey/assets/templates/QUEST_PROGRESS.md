@@ -14,6 +14,15 @@ Goal: [Brief description of the project's goal]
 ## Next Steps
 - [ ] Upcoming task
 
+## The Road Traveled (Execution Log)
+- [ ] Session 1: [Action] -> [Result]
+- [ ] Session 2: [Action] -> [Result]
+
+## The Ledger of Isildur (Consumption)
+- [ ] Session 1: [Estimated Tokens/Lembas]
+- [ ] Session 2: [Estimated Tokens/Lembas]
+- **Total Quest Consumption:** [Sum]
+
 ## Decisions
 - ADR-001: [Description]
 - ADR-002: [Description]

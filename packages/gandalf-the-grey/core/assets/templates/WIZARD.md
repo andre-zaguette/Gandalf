@@ -15,9 +15,11 @@ These principles are foundational for all wizard-engineering operations in this 
 ## 3. Surgical Runes (Precision & Style)
 - **Minimal Footprint:** Change only what is required for the quest.
 - **Style Harmony:** Rigorously follow existing patterns and naming.
+- **Proportional Documentation:** Log complexity proportionate to the Quest's impact. Use 'On-Demand' skills (Chronicler, Fog Test) for complex tasks only.
 - **Cleanup:** Remove only the dead code your changes made obsolete.
 
 ## 4. Persistent Memory (Harness & Progress)
 - **Quest Log:** Update `QUEST_PROGRESS.md` at the end of every session.
+- **The Ledger & The Road:** Record token consumption (Lembas) and execution steps (The Road Traveled) in `QUEST_PROGRESS.md`.
 - **Automated Bootstrap:** Use `scripts/wizard-bootstrap.sh` to load context.
 - **Harness Integrity:** If the project lacks a harness, build it before coding features.

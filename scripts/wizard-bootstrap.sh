@@ -20,4 +20,7 @@ echo ""
 echo "--- Next Actions ---"
 grep -A 5 "## Next Steps" QUEST_PROGRESS.md | grep "\- \[ \]"
 
-echo "=== BOOTSTRAP COMPLETE ==="
+echo ""
+echo "--- Council of Elrond (Global Wisdom) ---"
+COUNCIL_FILE="$HOME/.gemini/GANDALF_COUNCIL.md"
+[ -f "$COUNCIL_FILE" ] && echo "Council Wisdom: Found" || echo "Council Wisdom: Not found"

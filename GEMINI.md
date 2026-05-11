@@ -19,5 +19,6 @@ These principles are foundational for all wizard-engineering operations in this 
 
 ## 4. Persistent Memory (Harness & Progress)
 - **Quest Log:** Update `QUEST_PROGRESS.md` at the end of every session.
+- **The Ledger & The Road:** Record token consumption (Lembas) and execution steps (The Road Traveled) in `QUEST_PROGRESS.md`.
 - **Automated Bootstrap:** Use `scripts/wizard-bootstrap.sh` to load context.
 - **Harness Integrity:** If the project lacks a harness, build it before coding features.
