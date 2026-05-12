@@ -19,6 +19,8 @@ Roads:
 - Safe Cleanup -> Refactoring Skill under TDD protection.
 - Bug Hunt -> Debugging Skill -> Proof (Test) before Fix.
 - Review Ask -> Risk Audit Skill.
+- Cross-System Impact / "Who depends on this?" -> Narvi -> Alliance Map (SIGNAL_CRAFT_FORGE).
+- Harness missing / BDD setup / No tests -> Narvi -> Craft Audit (SIGNAL_CRAFT_FORGE).
 
 ## Fellowship Routing
 
@@ -31,6 +33,7 @@ Roads:
 | React, Next.js, RSC, Server Actions | Celebrimbor | `SIGNAL_REACT_TASK` |
 | Node, NestJS, REST API, queues | Beorn | `SIGNAL_NODE_TASK` |
 | Tests, CI, quality gate | Boromir | `SIGNAL_BREACH_DEFENSE` |
+| Harness audit, BDD setup, cross-project impact map | Narvi | `SIGNAL_CRAFT_FORGE` |
 | Cross-stack (UI + backend) | Gandalf coordinates multiple agents | — |
 
 Palantír is consulted first on every non-trivial quest. No agent acts without archive check.
